@@ -13,7 +13,7 @@ func main() {
 
 	//g.ApplyBasic(database.Models...)
 	g.ApplyBasic(
-		model.User{},
+		model.Url{},
 	)
 
 	g.Execute()

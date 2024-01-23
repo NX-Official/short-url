@@ -34,7 +34,7 @@ func Init() {
 
 	// 自动建表
 	err = DB.AutoMigrate(
-		model.User{},
+		model.Url{},
 	)
 
 	if err != nil {

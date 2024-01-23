@@ -2,7 +2,7 @@ package module
 
 import (
 	"github.com/gin-gonic/gin"
-	"short-url/internal/module/user"
+	"short-url/internal/module/url"
 )
 
 type Module interface {
@@ -19,5 +19,5 @@ func RegisterModule(m Module) {
 
 func init() {
 	// Register your module here
-	RegisterModule(&user.ModuleUser{})
+	RegisterModule(&url.ModuleUrl{})
 }

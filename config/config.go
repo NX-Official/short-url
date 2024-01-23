@@ -1,11 +1,12 @@
 package config
 
 type Config struct {
-	Host   string `envconfig:"HOST"`
-	Port   string `envconfig:"PORT"`
-	Prefix string `envconfig:"PREFIX"`
-	Mysql  Mysql
-	JWT    JWT
+	Host    string `envconfig:"HOST"`
+	Port    string `envconfig:"PORT"`
+	Prefix  string `envconfig:"PREFIX"`
+	BaseURL string `envconfig:"BASE_URL"`
+	Mysql   Mysql
+	JWT     JWT
 }
 
 type Mysql struct {
