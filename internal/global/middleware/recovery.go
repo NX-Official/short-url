@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"gin-rush-template/internal/global/errs"
 	"github.com/gin-gonic/gin"
+	"short-url/internal/global/errs"
 )
 
 func Recovery() gin.HandlerFunc {

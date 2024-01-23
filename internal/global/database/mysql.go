@@ -2,13 +2,13 @@ package database
 
 import (
 	"fmt"
-	"gin-rush-template/config"
-	"gin-rush-template/internal/global/query"
-	"gin-rush-template/internal/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
+	"short-url/config"
+	"short-url/internal/global/query"
+	"short-url/internal/model"
 )
 
 var Query *query.Query

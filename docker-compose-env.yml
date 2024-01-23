@@ -1,7 +1,7 @@
 version: '3.1'
 
 networks:
-  gin-rush-template-net:
+  short-url-net:
     driver: bridge
 
 
@@ -9,10 +9,10 @@ networks:
 services:
   mysql:
     image: mysql:8.0
-    container_name: gin-rush-template-mysql
+    container_name: short-url-mysql
     environment:
       MYSQL_ROOT_PASSWORD: 12345678
-      MYSQL_DATABASE: gin-rush-template
+      MYSQL_DATABASE: short-url
     ports:
       - "3306:3306"
 #    volumes:
@@ -26,7 +26,7 @@ services:
     privileged: true
     restart: always
     networks:
-      - gin-rush-template-net
+      - short-url-net
 #
 #  redis:
 #    image: redis:6.2.5

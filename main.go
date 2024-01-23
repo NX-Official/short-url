@@ -1,6 +1,6 @@
 package main
 
-import "gin-rush-template/cmd/server"
+import "short-url/cmd/server"
 
 func main() {
 	server.Init()

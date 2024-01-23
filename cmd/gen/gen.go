@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gin-rush-template/internal/model"
 	"gorm.io/gen"
+	"short-url/internal/model"
 )
 
 func main() {

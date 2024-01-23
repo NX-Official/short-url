@@ -2,9 +2,9 @@ package config
 
 import (
 	"fmt"
-	"gin-rush-template/tools"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/spf13/viper"
+	"short-url/tools"
 )
 
 var Path = "config/config.yaml"

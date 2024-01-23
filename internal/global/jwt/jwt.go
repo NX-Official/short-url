@@ -1,8 +1,8 @@
 package jwt
 
 import (
-	"gin-rush-template/config"
 	"github.com/golang-jwt/jwt"
+	"short-url/config"
 	"time"
 )
 

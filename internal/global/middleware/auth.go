@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"gin-rush-template/internal/global/errs"
-	"gin-rush-template/internal/global/jwt"
 	"github.com/gin-gonic/gin"
+	"short-url/internal/global/errs"
+	"short-url/internal/global/jwt"
 )
 
 func Auth() gin.HandlerFunc {

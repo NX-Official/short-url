@@ -1,8 +1,8 @@
 package model
 
 import (
-	"gin-rush-template/tools"
 	"gorm.io/gorm"
+	"short-url/tools"
 )
 
 type User struct {

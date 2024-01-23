@@ -1,4 +1,4 @@
-module gin-rush-template
+module short-url
 
 go 1.21.0
 

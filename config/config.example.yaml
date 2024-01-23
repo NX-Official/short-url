@@ -7,5 +7,5 @@ Mysql:
     Port: "3306"
     Username: "root"
     Password: "12345678"
-    DBName: "gin-rush-template"
+    DBName: "short-url"
 

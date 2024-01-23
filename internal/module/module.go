@@ -1,8 +1,8 @@
 package module
 
 import (
-	"gin-rush-template/internal/module/user"
 	"github.com/gin-gonic/gin"
+	"short-url/internal/module/user"
 )
 
 type Module interface {

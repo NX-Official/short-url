@@ -1,13 +1,13 @@
 package user
 
 import (
-	"gin-rush-template/internal/global/database"
-	"gin-rush-template/internal/global/errs"
-	"gin-rush-template/internal/global/jwt"
-	"gin-rush-template/tools"
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
+	"short-url/internal/global/database"
+	"short-url/internal/global/errs"
+	"short-url/internal/global/jwt"
+	"short-url/tools"
 )
 
 func Login(c *gin.Context) {

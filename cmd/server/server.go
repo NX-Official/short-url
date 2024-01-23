@@ -1,12 +1,12 @@
 package server
 
 import (
-	"gin-rush-template/config"
-	"gin-rush-template/internal/global/database"
-	"gin-rush-template/internal/global/middleware"
-	"gin-rush-template/internal/module"
 	"github.com/gin-gonic/gin"
 	"log"
+	"short-url/config"
+	"short-url/internal/global/database"
+	"short-url/internal/global/middleware"
+	"short-url/internal/module"
 )
 
 func Init() {
