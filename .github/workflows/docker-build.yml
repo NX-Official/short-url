@@ -1,0 +1,28 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main  # 指定触发事件的分支，这里是 main 分支
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest  # 指定运行环境
+
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v3  # 检出代码
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3  # 登录到 Docker Hub
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v3  # 构建和推送 Docker 镜像
+        with:
+          context: .  # Docker 构建上下文路径
+          file: ./Dockerfile  # 指定 Dockerfile 路径
+          push: true  # 推送镜像到 Docker Hub
+          tags: nxofficial/short-url:latest  # 镜像标签，替换为您的 Docker Hub 用户名和镜像名
