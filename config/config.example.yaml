@@ -1,9 +1,9 @@
-Host: "127.0.0.1"
+Host: "0.0.0.0"
 Port: "8080"
 Prefix: "/"
 
 Mysql:
-    Host: "127.0.0.1"
+    Host: "mysql"
     Port: "3306"
     Username: "root"
     Password: "12345678"
