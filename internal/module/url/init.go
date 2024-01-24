@@ -1,7 +1,6 @@
 package url
 
 import (
-	"fmt"
 	"short-url/config"
 )
 
@@ -17,6 +16,5 @@ func (u *ModuleUrl) GetName() string {
 }
 
 func (u *ModuleUrl) Init() {
-	baseURL = config.Get().BaseURL
-	fmt.Println("baseURL: ", baseURL)
+	baseURL = "http://" + config.Get().Host + ":" + config.Get().Port + config.Get().Prefix + "api/"
 }

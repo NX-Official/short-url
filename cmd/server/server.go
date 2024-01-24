@@ -22,9 +22,10 @@ func Init() {
 func Run() {
 	r := gin.New()
 	r.Use(gin.Logger(), middleware.Recovery())
+
 	for _, m := range module.Modules {
 		log.Println("InitRouter: " + m.GetName())
-		m.InitRouter(r.Group("/" + config.Get().Prefix))
+		m.InitRouter(r.Group(config.Get().Prefix + "api/"))
 	}
 	err := r.Run(config.Get().Host + ":" + config.Get().Port)
 	if err != nil {
