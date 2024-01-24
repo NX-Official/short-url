@@ -26,6 +26,7 @@ FROM scratch
 WORKDIR /app
 # 从 Go 构建阶段复制编译后的二进制文件
 COPY --from=go-build-stage /go/src/app/main .
+RUN mkdir -p /app/config
 
 # 运行应用
 CMD ["./main"]
