@@ -1,6 +1,7 @@
 package server
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"io/fs"
 	"log"
@@ -27,6 +28,9 @@ func Init() {
 func Run() {
 	r := gin.New()
 	r.Use(gin.Logger(), middleware.Recovery())
+
+	// CORS
+	r.Use(cors.Default())
 
 	r.Use(func(c *gin.Context) {
 		if !strings.HasPrefix(c.Request.URL.Path, "/api") {

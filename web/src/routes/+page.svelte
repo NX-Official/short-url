@@ -1,59 +1,54 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+    import { getShortenURL } from "./request.js"; // 确保路径正确
+
+    let inputUrl = "";
+    let shortUrl = "";
+    let errorMessage = "";
+
+    async function handleShorten() {
+        try {
+            shortUrl = await getShortenURL(inputUrl);
+        } catch (error) {
+            errorMessage = error.message;
+        }
+    }
+
+    async function copyToClipboard() {
+        if (shortUrl) {
+            try {
+                await navigator.clipboard.writeText(shortUrl);
+                // 可以添加一些反馈，比如显示“已复制”消息
+            } catch (err) {
+                errorMessage = "Failed to copy to clipboard";
+            }
+        }
+    }
 </script>
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
+<div>
+    <input type="text" bind:value={inputUrl} placeholder="Enter URL here" />
+    <button on:click={handleShorten}>Shorten URL</button>
+</div>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+{#if errorMessage}
+    <p class="error">{errorMessage}</p>
+{/if}
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+<div>
+    <input
+        type="text"
+        value={shortUrl}
+        readonly
+        placeholder="Shortened URL will appear here"
+    />
+    {#if shortUrl}
+        <button on:click={copyToClipboard}>Copy to Clipboard</button>
+    {/if}
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
+    /* 样式可根据需要调整 */
+    .error {
+        color: red;
+    }
 </style>

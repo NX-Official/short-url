@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
+	"net/http"
 	"short-url/internal/global/database"
 	"short-url/internal/global/errs"
 )
@@ -28,5 +29,5 @@ func Jump(c *gin.Context) {
 		return
 	}
 
-	c.Redirect(302, url.LongURL)
+	c.Redirect(http.StatusMovedPermanently, url.LongURL)
 }
