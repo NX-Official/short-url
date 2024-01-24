@@ -5,8 +5,21 @@ networks:
     driver: bridge
 
 
-# 如果你没有 MySQL 和 Redis 等依赖, 可以启动本 Docker Compose
 services:
+  app:
+    build: .
+    container_name: short-url-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    restart: always
+    volumes:
+      -  ./config/config.yaml:/app/config/config.yaml
+    networks:
+      - short-url-net
+
+
   mysql:
     image: mysql:8.0
     container_name: short-url-mysql
