@@ -17,7 +17,7 @@ ENV GOPROXY https://goproxy.cn,direct
 WORKDIR /go/src/app
 COPY . .
 
-COPY --from=build-stage /app/build/* ./web/bulid
+COPY --from=build-stage /app/build/* ./web/build
 # 编译 Go 应用
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
