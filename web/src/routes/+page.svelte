@@ -37,7 +37,7 @@
 {/if}
 
 {#if successMessage}
-    <p>{successMessage}</p>
+    <p class="success" >{successMessage}</p>
 {/if}
 
 <div>
@@ -57,4 +57,10 @@
     .error {
         color: red;
     }
+
+    .success {
+        color: green;
+    }
 </style>
+
+
