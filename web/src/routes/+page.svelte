@@ -4,6 +4,7 @@
     let inputUrl = "";
     let shortUrl = "";
     let errorMessage = "";
+    let successMessage = "";
 
     async function handleShorten() {
         try {
@@ -18,6 +19,7 @@
             try {
                 await navigator.clipboard.writeText(shortUrl);
                 // 可以添加一些反馈，比如显示“已复制”消息
+                successMessage = "Copied to clipboard";
             } catch (err) {
                 errorMessage = "Failed to copy to clipboard :" + err.message;
             }
@@ -32,6 +34,10 @@
 
 {#if errorMessage}
     <p class="error">{errorMessage}</p>
+{/if}
+
+{#if successMessage}
+    <p>{successMessage}</p>
 {/if}
 
 <div>

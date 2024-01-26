@@ -29,8 +29,6 @@ func Run() {
 	// CORS
 	r.Use(cors.Default())
 
-	//r.Static("/" , "web/build")
-
 	r.Use(func(c *gin.Context) {
 		if !strings.HasPrefix(c.Request.URL.Path, "/api") {
 			c.FileFromFS(c.Request.URL.Path, http.Dir("web/build"))
