@@ -43,7 +43,7 @@ func Run() {
 		m.InitRouter(apiGroup)
 	}
 
-	err := r.Run(config.Get().Host + ":" + config.Get().Port)
+	err := r.Run(":" + config.Get().Port)
 	if err != nil {
 		panic(err)
 	}
