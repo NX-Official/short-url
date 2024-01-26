@@ -1,6 +1,6 @@
 export async function getShortenURL(url) {
     try {
-        const res = await fetch('http://127.0.0.1:8080/api/shorten', {
+        const res = await fetch('/api/shorten', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
