@@ -37,7 +37,7 @@
 {/if}
 
 {#if successMessage}
-    <p class="success" >{successMessage}</p>
+    <p class="success">{successMessage}</p>
 {/if}
 
 <div>
@@ -52,6 +52,15 @@
     {/if}
 </div>
 
+<div>
+    <a href="https://github.com/NX-Official/short-url">
+        <img
+            src="https://img.shields.io/github/stars/NX-Official/short-url?style=social"
+            alt="GitHub stars"
+        />
+    </a>
+</div>
+
 <style>
     /* 样式可根据需要调整 */
     .error {
@@ -62,5 +71,3 @@
         color: green;
     }
 </style>
-
-
