@@ -16,5 +16,9 @@ func (u *ModuleUrl) GetName() string {
 }
 
 func (u *ModuleUrl) Init() {
-	baseURL = "http://" + config.Get().Host + ":" + config.Get().Port + config.Get().Prefix + "api/"
+	if config.Get().Port == "80" {
+		baseURL = "http://" + config.Get().Host + config.Get().Prefix + "api/"
+	} else {
+		baseURL = "http://" + config.Get().Host + ":" + config.Get().Port + config.Get().Prefix + "api/"
+	}
 }
