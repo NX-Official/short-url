@@ -19,7 +19,7 @@
                 await navigator.clipboard.writeText(shortUrl);
                 // 可以添加一些反馈，比如显示“已复制”消息
             } catch (err) {
-                errorMessage = "Failed to copy to clipboard";
+                errorMessage = "Failed to copy to clipboard :" + err.message;
             }
         }
     }
